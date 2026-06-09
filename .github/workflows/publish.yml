@@ -1,13 +1,10 @@
 name: Publish to npm
 
-# ブラウザだけで公開できます:
-#   - GitHub で Release を作成する（推奨。タグも付く）か、
-#   - Actions タブの "Run workflow" ボタンから手動実行する。
-# どちらも npm publish はこの GitHub のランナー上で走ります（あなたの端末は不要）。
+# 既定は端末から手動で `npm publish` します（このワークフローは任意）。
+# GitHub 上で公開したいときだけ、Secrets に NPM_TOKEN を登録してから
+# Actions タブの "Run workflow" で手動実行してください（Release では自動発火しません）。
 
 on:
-  release:
-    types: [published]
   workflow_dispatch: {}
 
 jobs:
