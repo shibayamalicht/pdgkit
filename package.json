@@ -1,0 +1,91 @@
+{
+  "name": "@shibayama/pdgkit",
+  "version": "0.1.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Headless engine and toolkit for the PatentDSL (.pdg) patent-figure language — generate, validate, and render block / flowchart / state / sequence patent diagrams with no browser.",
+  "type": "module",
+  "license": "MIT",
+  "author": "しばやま",
+  "homepage": "https://github.com/shibayamalicht/pdgkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibayamalicht/pdgkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shibayamalicht/pdgkit/issues"
+  },
+  "keywords": [
+    "patent",
+    "patent-drawing",
+    "diagram",
+    "dsl",
+    "pdg",
+    "patentdsl",
+    "svg",
+    "figure",
+    "headless",
+    "cli",
+    "mcp"
+  ],
+  "bin": {
+    "pdgkit": "dist/pdgkit.js",
+    "pdgkit-mcp": "dist/pdgkit-mcp.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/pdgkit.global.js",
+  "jsdelivr": "./dist/pdgkit.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "require": "./dist/core.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "assets",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "cli": "tsx bin/pdgkit.ts",
+    "mcp": "tsx bin/pdgkit-mcp.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^28.0.3",
+    "@types/node": "^20.14.10",
+    "fflate": "^0.8.3",
+    "tsup": "^8.0.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "jpeg-js": "^0.4.4",
+    "jsdom": "^29.1.1",
+    "jspdf": "^4.2.1",
+    "svg2pdf.js": "^2.7.0",
+    "zod": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

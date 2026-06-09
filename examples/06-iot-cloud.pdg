@@ -1,0 +1,27 @@
+# IoT/クラウド構成
+
+100 = センサ端末 / sensor terminal
+10 = 検出部 / detector
+11 = 温度センサ / temperature sensor
+12 = 加速度センサ / acceleration sensor
+20 = 処理部 / processor
+21 = 取得部 / acquisition unit
+22 = 判定部 / determination unit
+30 = 通信部 / communication unit
+200 = ゲートウェイ / gateway
+300 = クラウドサーバ / cloud server
+310 = 受信部 / receiver
+320 = 解析部 / analyzer
+330 = 記憶部 / storage
+
+100 : 10 20 30
+10 : 11 12
+20 : 21 22
+300 : 310 320 330
+
+10 -> 20 : センサ値 / sensor value
+20 -> 30 : 送信データ / transmission data
+30 .> 200 : 無線 / wireless
+200 -> 310 : 中継 / relay
+310 -> 320 : データ / data
+320 -> 330 : 結果 / result

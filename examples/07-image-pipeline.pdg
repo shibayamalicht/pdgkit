@@ -1,0 +1,17 @@
+# 画像処理パイプライン(方法クレーム用)
+
+S100 = 画像を取得 / Acquire image
+S110 = 前処理 / Preprocess
+S120 = 特徴量を抽出 / Extract features
+S130 = 欠陥あり? / Defect?
+S140 = アラートを出力 / Output alert
+S150 = 正常結果を記録 / Record normal result
+S160 = 終了 / End
+
+S100 -> S110
+S110 -> S120
+S120 -> S130
+S130 -> S140 : Yes
+S130 -> S150 : No
+S140 -> S160
+S150 -> S160

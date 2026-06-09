@@ -1,0 +1,20 @@
+# 制御ループ(装置クレーム用)
+
+100 = 制御システム / control system
+10 = 制御部 / controller
+11 = 目標値取得部 / target acquisition unit
+12 = 偏差算出部 / error calculator
+13 = 指令生成部 / command generator
+20 = 駆動部 / driver
+30 = センサ部 / sensor unit
+40 = 対象装置 / controlled object
+
+100 : 30 10 40 20
+10 : 11 12 13
+
+30 -> 12 : 測定値 / measured value
+11 -> 12 : 目標値 / target value
+12 -> 13 : 偏差 / error
+13 -> 20 : 指令 / command
+20 -> 40 : 駆動信号 / drive signal
+40 .> 30 : フィードバック / feedback

@@ -1,0 +1,12 @@
+# 通信ハンドシェイク(シーケンス図)
+
+100 = 端末 / terminal
+200 = サーバ / server
+
+100 -> 200 : 接続要求 / connect request
+200 -> 100 : 応答 / response
+100 -> 200 : 認証情報 / credentials
+200 -> 100 : 認証結果 / auth result
+100 <-> 200 : データ通信 / data exchange
+100 -> 200 : 切断要求 / disconnect
+200 -> 100 : 切断完了 / disconnected
